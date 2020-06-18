@@ -11,6 +11,7 @@ class App extends React.Component {
     };
   }
 
+  // Add the items
   addItem(todoValue) {
     if (todoValue !== "") {
       const newItem = {
@@ -28,16 +29,20 @@ class App extends React.Component {
     }
   }
 
+  //Delete the item by id
   deleteItem(id) {
     const list = [...this.state.list];
     const updatedlist = list.filter(item => item.id !== id);
     this.setState({ list: updatedlist });
   }
 
+  //update the input fields
   updateInput(input) {
     this.setState({ newItem: input });
   }
 
+
+  //render the application
   render() {
     return (
       <div>
